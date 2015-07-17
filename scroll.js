@@ -7,6 +7,7 @@ var tumblrAutoPager = {
     ppId: "",
     LN: location.hostname,
     init: function() {
+        console.log("A")
         if ($("autopagerize_icon") || navigator.userAgent.indexOf('iPhone') != -1) return;
         var tAP = tumblrAutoPager;
         var p = 1;
@@ -24,6 +25,7 @@ var tumblrAutoPager = {
         };
         var gPFncs = [];
         gPFncs[0] = function(aE) {
+            console.log("B")
             var r = [];
             for (var i = 0, l = aE.length; i < l; i++) {
                 if (aE[i].className == "autopagerize_page_element") {
@@ -34,6 +36,7 @@ var tumblrAutoPager = {
             return r;
         };
         gPFncs[1] = function(aE) {
+            console.log("C")
             var r = [];
             for (var i = 0, l = aE.length; i < l; i++) {
                 var arr = aE[i].className ? aE[i].className.split(" ") : null;
@@ -46,6 +49,7 @@ var tumblrAutoPager = {
             return r;
         };
         gPFncs[2] = function(aE) {
+            console.log("D")
             var r = [];
             var tmpId = tAP.ppId ? [tAP.ppId] : ["posts", "main", "container", "content", "apDiv2", "wrapper", "projects"];
             for (var i = 0, l = aE.length; i < l; i++) {
@@ -69,6 +73,7 @@ var tumblrAutoPager = {
         }
 
         function gCE(pElem) {
+            console.log("E")
             var r = [];
             for (var i = 0, l = pElem.childNodes.length; i < l; i++) {
                 r.push(pElem.childNodes.item(i))
@@ -86,6 +91,7 @@ var tumblrAutoPager = {
         };
 
         function chkAjaBrowser() {
+            console.log("F")
             var A, B = navigator.userAgent;
             this.bw = {
                 safari: ((A = B.split('AppleWebKit/')[1]) ? A.split('(')[0].split('.')[0] : 0) >= 124,
@@ -98,6 +104,7 @@ var tumblrAutoPager = {
         }
 
         function createHttpRequest() {
+            console.log("G")
             if (window.XMLHttpRequest) {
                 return new XMLHttpRequest()
             } else {
@@ -118,6 +125,7 @@ var tumblrAutoPager = {
         };
 
         function sendRequest(E, R, C, D, F, G, S, A) {
+            console.log("H")
             var Q = C.toUpperCase() == 'GET',
                 H = createHttpRequest();
             if (H == null) {
@@ -163,6 +171,7 @@ var tumblrAutoPager = {
             H.send(R);
 
             function B(T) {
+                console.log("I")
                 if (!L || typeof T.setRequestHeader == 'function') {
                     T.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8')
                 }
@@ -170,6 +179,7 @@ var tumblrAutoPager = {
             }
 
             function K(X, V) {
+                console.log("J")
                 var Z = [];
                 if (typeof X == 'object') {
                     for (var W in X) {
@@ -192,6 +202,7 @@ var tumblrAutoPager = {
                 }
 
                 function Y(b, a) {
+                    console.log("K")
                     Z.push(encodeURIComponent(b) + '=' + encodeURIComponent(a))
                 }
                 return Z.join('&')
@@ -200,6 +211,7 @@ var tumblrAutoPager = {
         }
 
         function addNextPage(oj) {
+            console.log("L")
             if (oj.status == 404) {
                 tAP.remainFlg = false;
                 return;
@@ -224,6 +236,7 @@ var tumblrAutoPager = {
         watch_scroll();
 
         function watch_scroll() {
+            console.log("M")
             var d = document.compatMode == "BackCompat" ? document.body : document.documentElement;
             var r = d.scrollHeight - d.clientHeight - (d.scrollTop || document.body.scrollTop);
             if (r < d.clientHeight * 2 && tAP.rF) {
@@ -246,6 +259,7 @@ var tumblrAutoPager = {
         };
     },
     switchAutoPage: function() {
+        console.log("N")
         this.rF = !this.rF;
         var aE = document.getElementsByTagName('*');
         for (var i = 0, l = aE.length; i < l; i++) {
