@@ -7,11 +7,6 @@ var tumblrAutoPager = {
     ppId: "",
     LN: location.hostname,
     init: function() {
-        
-        console.log("===========")
-        console.log(tumblrAutoPager)
-        console.log("===========")
-        
         if ($("autopagerize_icon") || navigator.userAgent.indexOf('iPhone') != -1) return;
         var tAP = tumblrAutoPager;
         var p = 1;
@@ -207,6 +202,7 @@ var tumblrAutoPager = {
 
         function addNextPage(oj) {
             console.log("Done!")
+            console.log(tAP)
             if (oj.status == 404) {
                 tAP.remainFlg = false;
                 return;
@@ -245,7 +241,10 @@ var tumblrAutoPager = {
                 sendRequest(addNextPageWithLikes, "", "GET", "http://" + tAP.LN + "/page/" + p, true);
 
             }
-            setTimeout(arguments.callee, 200);
+            
+            if (p > 0) {
+                setTimeout(arguments.callee, 200);
+            }
         };
 
         function $(id) {
