@@ -7,6 +7,11 @@ var tumblrAutoPager = {
     ppId: "",
     LN: location.hostname,
     init: function() {
+        
+        console.log("===========")
+        console.log(tumblrAutoPager)
+        console.log("===========")
+        
         if ($("autopagerize_icon") || navigator.userAgent.indexOf('iPhone') != -1) return;
         var tAP = tumblrAutoPager;
         var p = 1;
