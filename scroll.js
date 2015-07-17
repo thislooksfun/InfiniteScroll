@@ -204,7 +204,7 @@ var tumblrAutoPager = {
             console.log("Done!")
             console.log(tAP)
             if (oj.status == 404) {
-                tAP.remainFlg = false;
+                tAP.rF = false;
                 return;
             }
             var d = document.createElement("div");
