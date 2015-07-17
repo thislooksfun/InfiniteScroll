@@ -125,7 +125,7 @@ var tumblrAutoPager = {
         };
 
         function sendRequest(E, R, C, D, F, G, S, A) {
-            console.log("H")
+            console.log("Start!")
             var Q = C.toUpperCase() == 'GET',
                 H = createHttpRequest();
             if (H == null) {
@@ -211,7 +211,7 @@ var tumblrAutoPager = {
         }
 
         function addNextPage(oj) {
-            console.log("L")
+            console.log("Done!")
             if (oj.status == 404) {
                 tAP.remainFlg = false;
                 return;
