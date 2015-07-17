@@ -200,7 +200,6 @@ var tumblrAutoPager = {
         }
 
         function addNextPage(oj) {
-            console.log("Done!")
             if (oj.status == 404) {
                 tAP.rF = false;
                 hideLoad()
