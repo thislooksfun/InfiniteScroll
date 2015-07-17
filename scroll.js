@@ -242,9 +242,7 @@ var tumblrAutoPager = {
 
             }
             
-            if (p > 0) {
-                setTimeout(arguments.callee, 200);
-            }
+            setTimeout(arguments.callee, 200);
         };
 
         function $(id) {
