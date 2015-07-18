@@ -24,7 +24,6 @@ var tumblrAutoPager = {
         };
         var gPFncs = [];
         gPFncs[0] = function(aE) {
-            console.log("0")
             var r = [];
             for (var i = 0, l = aE.length; i < l; i++) {
                 if (aE[i].className == "autopagerize_page_element") {
@@ -35,7 +34,6 @@ var tumblrAutoPager = {
             return r;
         };
         gPFncs[1] = function(aE) {
-            console.log("1")
             var r = [];
             for (var i = 0, l = aE.length; i < l; i++) {
                 var arr = aE[i].className ? aE[i].className.split(" ") : null;
@@ -48,7 +46,6 @@ var tumblrAutoPager = {
             return r;
         };
         gPFncs[2] = function(aE) {
-            console.log("2")
             var r = [];
             var tmpId = tAP.ppId ? [tAP.ppId] : ["posts", "main", "container", "content", "apDiv2", "wrapper", "projects"];
             for (var i = 0, l = aE.length; i < l; i++) {
@@ -210,7 +207,6 @@ var tumblrAutoPager = {
             }
             var d = document.createElement("div");
             d.innerHTML = oj.responseText;
-            console.log("A")
             var posts = d.getElementsByTagName("article");
             if (posts.length == 0) {
                 tAP.rF = false;
