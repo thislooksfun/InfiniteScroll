@@ -237,8 +237,6 @@ var tumblrAutoPager = {
                     Tumblr.LikeButton.get_status_by_page(p);
                 }
                 sendRequest(addNextPageWithLikes, "", "GET", "http://" + tAP.LN + "/page/" + p, true);
-            } else if (!tAP.rF) {
-                hideLoad()
             }
             
             setTimeout(arguments.callee, 200);
