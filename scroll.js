@@ -209,7 +209,7 @@ var tumblrAutoPager = {
             var d = document.createElement("div");
             d.innerHTML = oj.responseText;
             var posts = tAP.gP(d.getElementsByTagName("article"));
-            if (posts.length < 2) {
+            if (posts.length == 0) {
                 tAP.rF = false;
                 console.log("C")
                 hideLoad()
