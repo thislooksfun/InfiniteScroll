@@ -230,9 +230,7 @@ var tumblrAutoPager = {
         function watch_scroll() {
             var d = document.compatMode == "BackCompat" ? document.body : document.documentElement;
             var r = d.scrollHeight - d.clientHeight - (d.scrollTop || document.body.scrollTop);
-            console.log("Z")
             if (r < d.clientHeight * 2 && tAP.rF) {
-                console.log("X")
                 tAP.rF = false;
                 p++;
                 
