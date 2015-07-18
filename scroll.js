@@ -231,14 +231,14 @@ var tumblrAutoPager = {
             if (r < d.clientHeight * 2 && tAP.rF) {
                 tAP.rF = false;
                 p++;
-
+                
                 addNextPageWithLikes = function(oj) {
                     addNextPage(oj);
                     Tumblr.LikeButton.get_status_by_page(p);
                 }
-
                 sendRequest(addNextPageWithLikes, "", "GET", "http://" + tAP.LN + "/page/" + p, true);
-
+            } else if (!tAP.rF) {
+                hideLoad()
             }
             
             setTimeout(arguments.callee, 200);
