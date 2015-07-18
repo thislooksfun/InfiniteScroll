@@ -24,6 +24,7 @@ var tumblrAutoPager = {
         };
         var gPFncs = [];
         gPFncs[0] = function(aE) {
+            console.log("0")
             var r = [];
             for (var i = 0, l = aE.length; i < l; i++) {
                 if (aE[i].className == "autopagerize_page_element") {
@@ -34,6 +35,7 @@ var tumblrAutoPager = {
             return r;
         };
         gPFncs[1] = function(aE) {
+            console.log("1")
             var r = [];
             for (var i = 0, l = aE.length; i < l; i++) {
                 var arr = aE[i].className ? aE[i].className.split(" ") : null;
@@ -46,6 +48,7 @@ var tumblrAutoPager = {
             return r;
         };
         gPFncs[2] = function(aE) {
+            console.log("2")
             var r = [];
             var tmpId = tAP.ppId ? [tAP.ppId] : ["posts", "main", "container", "content", "apDiv2", "wrapper", "projects"];
             for (var i = 0, l = aE.length; i < l; i++) {
@@ -202,16 +205,15 @@ var tumblrAutoPager = {
         function addNextPage(oj) {
             if (oj.status == 404) {
                 tAP.rF = false;
-                console.log("B")
                 hideLoad()
                 return;
             }
             var d = document.createElement("div");
             d.innerHTML = oj.responseText;
+            console.log("A")
             var posts = tAP.gP(d.getElementsByTagName("article"));
             if (posts.length == 0) {
                 tAP.rF = false;
-                console.log("C")
                 hideLoad()
                 return;
             }
@@ -261,7 +263,6 @@ var tumblrAutoPager = {
 window.addEventListener ? window.addEventListener('load', tumblrAutoPager.init, false) : window.attachEvent ? window.attachEvent("onload", tumblrAutoPager.init) : window.onload = tumblrAutoPager.init;
 
 function hideLoad() {
-    console.log("A")
     var x = document.getElementById("page_loading");
     if (x != null) {
         x.style.display = "none";
